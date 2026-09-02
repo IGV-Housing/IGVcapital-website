@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Terms of Use | IGV Capital</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="description" content="IGV Capital provides the financial architecture behind the IGV Platform - construction and long-term debt financing for housing delivery."/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png"/>
+<meta name="theme-color" content="#1A4848"/>
+</head><body><div class="page-wrapper"><div class="global-styles"><style>
+/* ============================================================
+   IGV CAPITAL — Self-contained stylesheet (Webflow removed)
+   Rebuilt from brand standards + inferred class conventions.
+   Colors sourced from actual brand marks in this document
+   (#1A4848 ink, #952944 accent) plus documented IGV brand
+   tokens (ochre, sage) for utility classes without literal
+   values in the source (e.g. "blue", "green" modifiers).
+   ============================================================ */
+
+:root {
+  /* Confirmed against official IGV Capital brand guide (PDF), cross-checked
+     against live site SVG artwork and prior brand memory.
+     Note: the guide's "Magenta" (CE7841) and "Steel Blue" (F7B34F) swatches
+     don't match their own names - likely a table extraction error. F7B34F
+     is nearly identical to the documented "IGVhope yellow" (#FBB040), so
+     it's treated as genuine (just mislabeled). The true accent maroon is
+     #952944, matching the logo mark, the live site's SVG fill, and prior
+     brand memory - overriding the garbled CE7841 value. */
+  --color-ink: #1A4848;           /* Evergreen - matches the actual logo artwork. Note: the brand guide PDF's text listed "Evergreen" as #194823, but that value visibly mismatched the real logo; #1A4848 is now the confirmed/official Evergreen going forward. */
+  --color-ink-soft: #3d6b6b;
+  --color-accent: #952944;       /* Maroon accent (guide's "Magenta" swatch, corrected) */
+  --color-accent-dark: #7a2038;
+  --color-gold: #F7B34F;         /* Gold accent (guide's "Steel Blue" swatch, corrected) */
+  --color-steel-blue: #7FA8AC;   /* Confirmed true Steel Blue, matching the Accelerator Program button */
+  --color-black: #2E2A2A;        /* Official "Black" - body text / dark-mode background */
+  --color-sage: #D1DAD3;         /* Computed 20% tint of Evergreen - light card backgrounds */
+  --color-sage-text: #b9c9be;    /* Light sage for secondary text on dark backgrounds */
+  --color-cream: #FFFDF3;        /* Official "Off White" - page background */
+  --color-white: #FFFFFF;
+  --color-hover-gray: #EEF0F0;
+  --color-dark-panel: #2E2A2A;   /* Official "Black" used as dark-mode section background */
+  --color-dark-panel-card: rgba(255,255,255,0.06);
+  --color-dark-panel-border: rgba(255,255,255,0.14);
+  --font-body: 'Montserrat', Arial, sans-serif;
+  --font-heading: 'Bitter', Georgia, serif;
+  --container-max: 1280px;
+}
+
+/* ---------- Reset / base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, p, ul, ol { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+button { font-family: inherit; }
+
+*[tabindex]:focus-visible, input[type="file"]:focus-visible {
+  outline: 0.125rem solid #4d65ff;
+  outline-offset: 0.125rem;
+}
+
+.hide { display: none !important; }
+.font-montserrat { font-family: var(--font-body) !important; }
+
+/* Scroll-triggered "fly up" reveal animation for main section blocks */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+@media screen and (max-width: 991px) { .hide-tablet { display: none !important; } }
+@media screen and (max-width: 767px) { .hide-mobile-landscape { display: none !important; } }
+@media screen and (max-width: 479px) { .hide-mobile { display: none !important; } }
+
+/* ---------- Framework-replacement utility classes ---------- */
+.inline-block { display: inline-block; max-width: 100%; }
+.icon-nav-menu {
+  position: relative;
+  width: 24px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.icon-nav-menu::before, .icon-nav-menu::after, .icon-nav-menu span {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-ink);
+  border-radius: 1px;
+}
+
+/* ---------- Layout / containers ---------- */
+.page-wrapper { width: 100%; }
+.padding-global { padding-left: 5vw; padding-right: 5vw; }
+.container-large { max-width: var(--container-max); margin-left: auto; margin-right: auto; width: 100%; }
+.main-wrapper { display: block; }
+
+/* ---------- Spacer utility (height in px = numeric suffix) ---------- */
+.spacer { width: 100%; flex-shrink: 0; }
+.spacer._8 { height: 8px; }
+.spacer._10 { height: 10px; }
+.spacer._12 { height: 12px; }
+.spacer._17 { height: 17px; }
+.spacer._18 { height: 18px; }
+.spacer._22 { height: 22px; }
+.spacer._23 { height: 23px; }
+.spacer._25 { height: 25px; }
+.spacer._26 { height: 26px; }
+.spacer._28 { height: 28px; }
+.spacer._33 { height: 33px; }
+.spacer._45 { height: 45px; }
+.spacer._49 { height: 49px; }
+.spacer._52 { height: 52px; }
+.spacer._53 { height: 53px; }
+.spacer._55 { height: 55px; }
+.spacer._63 { height: 63px; }
+.spacer._68 { height: 68px; }
+.spacer._72 { height: 72px; }
+.spacer._90 { height: 90px; }
+.spacer._100 { height: 100px; }
+.spacer._153 { height: 100px; }
+.spacer._159 { height: 90px; }
+.spacer._186 { height: 100px; }
+.spacer._250 { height: 216px; }
+@media screen and (max-width: 767px) {
+  .spacer._153, .spacer._159, .spacer._186, .spacer._250 { height: 56px; }
+}
+
+/* ---------- Max-width / width utility classes (numeric suffix) ---------- */
+._100 { width: 100%; }
+._314 { max-width: 314px; }
+._356 { max-width: 356px; }
+._369 { max-width: 369px; }
+._374 { max-width: 374px; }
+._397 { max-width: 397px; }
+._420 { max-width: 420px; }
+._456 { max-width: 456px; }
+._526 { max-width: 526px; }
+._550 { max-width: 550px; }
+._553 { max-width: 553px; }
+._572 { max-width: 572px; }
+._607 { max-width: 607px; }
+._675 { max-width: 675px; }
+._784 { max-width: 784px; }
+._884 { max-width: 884px; }
+
+/* ---------- Typography ---------- */
+.heading-style-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 1.2rem + 3.2vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-ink);
+}
+.heading-style-h1 em { color: var(--color-accent); font-style: italic; font-weight: 600; }
+
+.heading-style-h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 1.1rem + 2vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-ink);
+}
+.heading-style-h2 em { font-style: italic; }
+.heading-style-h2 em.italic-opacity-50 { opacity: 0.5; }
+.heading-style-h2.white { color: var(--color-cream); }
+.heading-style-h2.mid { text-align: center; margin-left: auto; margin-right: auto; }
+
+.heading-style-h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-ink);
+}
+.heading-style-h3.green { color: var(--color-ink); }
+
+.paragraph-style {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #33413f;
+}
+.ltd-fund-copy { font-family: var(--font-body) !important; }
+.paragraph-style.green { color: var(--color-ink); }
+.paragraph-style.green._526 { color: var(--color-ink); font-size: 0.85rem; line-height: 1.45; }
+.paragraph-style.semibold { font-weight: 600; color: var(--color-ink); }
+.paragraph-style.italic { font-style: italic; color: var(--color-ink); }
+.paragraph-style.mid { color: var(--color-sage-text); text-align: center; margin-left: auto; margin-right: auto; }
+
+.text-14-bold-caps {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink);
+}
+.text-14-bold-caps.blue { color: var(--color-gold); }
+.footer_first-part .text-14-bold-caps.blue { color: var(--color-steel-blue); }
+.text-14-bold-caps.green { color: var(--color-sage-text); }
+.text-14-bold-caps.mid { text-align: center; display: block; margin-left: auto; margin-right: auto; }
+.get-involved-label { color: var(--color-accent); }
+.section-capital .text-14-bold-caps { color: var(--color-accent); }
+.section-capital .paragraph-style { font-family: var(--font-body); }
+.text-14-bold-caps.blue.accelerator-label { color: var(--color-steel-blue); }
+.white-card .text-14-bold-caps.blue { color: var(--color-accent); }
+.certainty-title-label.paragraph-style.semibold { color: var(--color-steel-blue); }
+
+.text-14-semibold-caps {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  margin-bottom: 0.5rem;
+}
+
+.text-15-bold { font-size: 0.95rem; font-weight: 700; color: var(--color-ink); text-align: center; }
+.text-15px-italic { font-size: 0.95rem; font-style: italic; color: var(--color-sage-text); }
+.text-20px-bold-caps { font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-cream); }
+.text-20px-italic { font-family: var(--font-heading); font-size: 1.3rem; font-style: italic; color: var(--color-ink); }
+.text-24-bold-caps {
+  font-family: var(--font-body);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  margin-bottom: 0;
+}
+.text-48px-bold { font-size: 2.6rem; font-weight: 800; color: var(--color-gold); line-height: 1; }
+.text-13px { font-size: 0.8rem; color: var(--color-sage-text); }
+.text-13px.no-caps { text-transform: none; }
+.p-style { font-size: 0.9rem; line-height: 1.5; }
+.p-style.black { color: var(--color-black); }
+.p-style._13px, .paragraph-style._16px { font-size: 0.95rem; }
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.75rem;
+  border-radius: 999px;
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: background-color 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+}
+.button:hover { opacity: 0.88; }
+.button.stroke {
+  background-color: transparent;
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+}
+.button.blue { background-color: var(--color-accent); color: var(--color-white); }
+.button.blue.accelerator-cta { background-color: var(--color-steel-blue); }
+.button.blue.accelerator-cta:hover { opacity: 0.88; }
+.button.blue.green-v2 { background-color: var(--color-ink); }
+/* Hero "Housing Accelerator Program" button - Magenta swatch, corrected to
+   the confirmed true hex (952944) after the brand guide's CE7841 text value
+   was confirmed mismatched against the actual swatch color */
+.button_hero-wrapper .button:not(.stroke) { background-color: #952944; }
+.button_hero-wrapper .button:not(.stroke):hover { background-color: #952944; opacity: 0.88; }
+/* Hero "LTD Fund" button - filled per request, overriding the outline treatment */
+.button_hero-wrapper .button.stroke {
+  background-color: #1A4848;
+  color: var(--color-cream);
+  border-color: #1A4848;
+}
+.button_hero-wrapper .button.stroke:hover { background-color: #1A4848; opacity: 0.88; }
+.button.blue-f { background-color: var(--color-accent); color: var(--color-white); }
+.footer_first-part .button.stroke {
+  background-color: var(--color-steel-blue);
+  color: var(--color-cream);
+  border-color: var(--color-steel-blue);
+}
+.footer_first-part .button.stroke:hover { background-color: var(--color-steel-blue); opacity: 0.88; }
+.button_hero-wrapper { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* ---------- Navigation ---------- */
+.navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255,253,243,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(26,72,72,0.08);
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.navigation.menu-active { position: static; }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.brand-logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+.logo-embed { display: flex; align-items: center; }
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  flex: 1;
+}
+.nav-links-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
+  flex-wrap: nowrap;
+}
+.nav-wrapper > .btm-nav {
+  margin-left: auto;
+}
+.navlink, .navlink-division, .navlink-investment {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  background-color: transparent;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+/* Sliding underline hover, in the IGV Capital magenta accent */
+.navlink::after, .navlink-division::after, .navlink-investment::after {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 0.3rem;
+  height: 1.5px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.navlink:hover::after,
+.navlink-division:hover::after, .navlink-division.is-active::after,
+.navlink-investment:hover::after, .navlink-investment.is-active::after {
+  transform: scaleX(1);
+}
+
+.btm-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 0;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+.btm-nav:hover { background-color: var(--color-accent-dark); }
+.nav-actions-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.menu-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 860px) {
+  .nav { flex-wrap: wrap; }
+  .brand-logo { order: 1; }
+  .nav-actions-mobile { order: 2; }
+  .nav-wrapper { display: none; }
+  .nav-wrapper.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    order: 3;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .nav-links-group {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .nav-wrapper.is-open .btm-nav {
+    margin-top: 0.5rem;
+    margin-left: 0;
+    align-self: stretch;
+  }
+  .menu-burger { display: inline-flex; }
+}
+/* JS-driven fallback: if nav links don't actually fit on one line even above
+   860px (e.g. longer labels), force burger mode too. Overrides the fixed
+   breakpoint above so the nav never wraps to a second line. */
+.navigation.force-burger .nav { flex-wrap: wrap; }
+.navigation.force-burger .brand-logo { order: 1; }
+.navigation.force-burger .nav-actions-mobile { order: 2; }
+.navigation.force-burger .nav-wrapper { display: none; }
+.navigation.force-burger .nav-wrapper.is-open {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  order: 3;
+  flex-basis: 100%;
+  width: 100%;
+  margin-top: 1rem;
+}
+.navigation.force-burger .nav-links-group {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+.navigation.force-burger .nav-wrapper.is-open .btm-nav {
+  margin-top: 0.5rem;
+  margin-left: 0;
+  align-self: stretch;
+}
+.navigation.force-burger .menu-burger { display: inline-flex; }
+
+/* Dropdown panels (IGV Divisions / Investment Opportunities) */
+.dropdown_nav_division, .dropdown_nav_investment {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background-color: var(--color-cream);
+  box-shadow: 0 20px 40px rgba(18,61,54,0.12);
+  z-index: 999;
+}
+.dropdown-nav-title {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 5vw 0;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+@media screen and (max-width: 860px) {
+  .dropdown-nav-title { font-size: 1.15rem; padding: 1.5rem 6vw 0; }
+}
+.grid-4_nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2.5rem 5vw;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+.grid-2-investment { grid-template-columns: repeat(2, 1fr); max-width: 60rem; }
+.card_nav-wrap-v2 { display: flex; flex-direction: column; height: 100%; }
+.image-wrapper_nav { border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 3; flex-shrink: 0; }
+.image-wrapper_nav .image-full-nav, .image-full-nav { width: 100%; height: 100%; object-fit: cover; }
+.img-logo { height: 1.6rem; width: auto; }
+.space-betwenn_nav { display: flex; flex-direction: column; justify-content: space-between; flex: 1; gap: 1rem; }
+.explore_light-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.arrow-center-embed { display: inline-flex; align-items: center; }
+@media screen and (max-width: 860px) {
+  .grid-4_nav, .grid-2-investment { grid-template-columns: 1fr; padding: 2rem 6vw; }
+  .dropdown_nav_division .image-wrapper_nav,
+  .dropdown_nav_investment .image-wrapper_nav { display: none; }
+  .dropdown_nav_division, .dropdown_nav_investment {
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+    box-shadow: none;
+    border-top: 1px solid rgba(26,72,72,0.08);
+    width: 100%;
+  }
+}
+
+/* ---------- Hero ---------- */
+.section-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: linear-gradient(180deg, var(--color-sage) 0%, var(--color-cream) 60%);
+}
+/* Muted background video (Vimeo background-mode player: auto-muted, looping,
+   no controls). Scaled to always cover the section regardless of aspect
+   ratio, the same "cover video" technique used for CSS background-size:cover. */
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-video-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.78vh;   /* 16:9 aspect, scaled from viewport height */
+  height: 56.25vw;   /* 16:9 aspect, scaled from viewport width */
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+/* Scrim per brand guide's Do's/Don'ts on logo/text legibility over photography:
+   dark or solid backgrounds are approved, light/blue filters are not - this
+   uses a translucent Off White layer so the dark ink heading stays legible
+   while the video remains visibly "muted" underneath. */
+/* Scrim restored per request with a lighter opacity than before (0.62 -> 0.35) */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(255, 253, 243, 0.35);
+}
+.section-hero > .padding-global {
+  position: relative;
+  z-index: 2;
+}
+@media screen and (max-width: 600px) {
+  /* Skip the video on small screens for performance/data usage; the
+     gradient fallback on .section-hero still applies. */
+  .hero-video-bg { display: none; }
+}
+.hero_layout { max-width: 46rem; }
+.hero_layout .paragraph-style { font-family: var(--font-body); }
+.hero-tick-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-ink);
+}
+.hero-tick-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-tick-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: rgba(255, 253, 243, 0.85);
+  color: var(--color-accent);
+}
+.paragraph-style.semibold { line-height: 1.7; }
+
+/* ---------- Who We Are / certainty section ---------- */
+.section-wwa { padding-top: 3rem; padding-bottom: 4rem; }
+.wwa_layout { display: flex; flex-direction: column; }
+.wwa-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+.wwa-video {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  clip-path: inset(0 round 24px);
+  background-color: transparent;
+  padding: 0;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+.wwa-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 24px;
+}
+@media screen and (max-width: 860px) {
+  .wwa-wrapper { grid-template-columns: 1fr; justify-items: stretch; }
+  .wwa-video { aspect-ratio: 16 / 9; min-height: 220px; }
+}
+.h2-wrapper { max-width: 46rem; }
+.list-15px-green {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.list-15px-green li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+}
+.list-15px-green li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+}
+.list-15px-green.semibold li { font-weight: 600; }
+
+.grid-2-wwa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.certainty-table {
+  border: 1px solid rgba(26, 72, 72, 0.18);
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: transparent;
+}
+.certainty-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.85fr auto 1.15fr;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem 2.25rem;
+  min-height: 9.5rem;
+}
+.certainty-row:not(:last-child) {
+  border-bottom: 1px solid rgba(26, 72, 72, 0.18);
+}
+.certainty-divider {
+  width: 1px;
+  align-self: stretch;
+  margin: 0.5rem 0;
+  background-color: rgba(26, 72, 72, 0.18);
+}
+.certainty-logo { display: flex; align-items: center; }
+.certainty-logo img { height: 2.4rem; width: auto; }
+.certainty-label {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--color-ink);
+  text-transform: uppercase;
+}
+@media screen and (max-width: 860px) {
+  .grid-2-wwa { grid-template-columns: 1fr; }
+  .certainty-row { padding: 1.25rem 1.25rem; gap: 0.5rem; min-height: 7.5rem; }
+  .certainty-logo img { height: 1.9rem; }
+}
+@media screen and (max-width: 480px) {
+  .certainty-row { grid-template-columns: 1fr; row-gap: 0.75rem; min-height: 0; }
+  .certainty-divider { display: none; }
+  .certainty-logo { justify-content: center; }
+}
+
+/* ---------- Investment opportunities section ---------- */
+.section-header { padding-top: 3rem; padding-bottom: 4rem; }
+.header_layout { max-width: 52rem; margin-left: auto; margin-right: auto; }
+.green-card, .white-card {
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+.green-card { background-color: var(--color-ink); }
+.green-card, .green-card * {
+  font-family: var(--font-body) !important;
+}
+.green-card .paragraph-style,
+.green-card .text-14-semibold-caps {
+  color: var(--color-cream);
+}
+.green-card .heading-style-h3 { color: var(--color-cream); }
+.green-card .paragraph-style.italic {
+  color: rgba(255, 253, 243, 0.85);
+}
+.white-card {
+  /* Fill matches the page ground behind it - outline only */
+  background-color: transparent;
+  border: 2px solid var(--color-accent);
+}
+.gap-1 { display: block; }
+.accelerator-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.accelerator-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: rgba(255, 253, 243, 0.06);
+  border: 1px solid rgba(255, 253, 243, 0.16);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+.accelerator-feature-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.accelerator-feature-logo img {
+  height: 2.75rem;
+  width: auto;
+}
+.accelerator-feature-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.accelerator-feature-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+}
+.accelerator-feature-number {
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--color-steel-blue);
+}
+@media screen and (max-width: 560px) {
+  .accelerator-feature-logo img { height: 2.25rem; }
+}
+@media screen and (max-width: 560px) {
+  .accelerator-feature { gap: 0.75rem; padding: 1.25rem 1.5rem; }
+}
+.img-wrapper-302 { border-radius: 12px; overflow: hidden; max-height: 400px; }
+.img-wrapper-302 .image-full, .img-wrapper-302 img { width: 100%; height: 400px; object-fit: cover; object-position: center bottom; display: block; }
+
+/* ---------- Timing / difference section (dark panel) ---------- */
+.section-timing {
+  background-color: var(--color-ink);   /* Evergreen — measured #1A4848 */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: var(--color-cream);
+}
+.timing_layout { display: flex; flex-direction: column; }
+
+/* ---------- Stage list ("Built on alignment") ----------
+   Values below are measured from the approved design: Evergreen #1A4848
+   ground, rows 854px wide / 78px tall / 17px apart, radius 8px, card fill
+   rgba(255,255,255,0.08), number #558283, 1px cream divider 50px tall. */
+.stage-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  color: #81B1B9;
+  text-align: center;
+}
+.stage-heading {
+  font-family: var(--font-body);
+  font-size: clamp(1.6rem, 1rem + 2.2vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-cream);
+  text-align: center;
+}
+.stage-lead,
+.stage-close {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-cream);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stage-lead { font-weight: 400; max-width: 25rem; }
+.stage-close { font-weight: 400; max-width: 31rem; }
+.stage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 100%;
+  max-width: 854px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stage-row {
+  display: grid;
+  grid-template-columns: 131px 235px 1px 1fr;
+  align-items: center;
+  min-height: 78px;
+  padding: 0 2rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+a.stage-row { transition: background-color 0.25s ease; }
+a.stage-row:hover { background-color: rgba(255, 255, 255, 0.13); }
+a.stage-row:focus-visible { outline: 2px solid var(--color-cream); outline-offset: 3px; }
+.content-green-wrap { scroll-margin-top: 7rem; }
+.stage-number {
+  font-family: var(--font-body);
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #558283;
+}
+.stage-label {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-cream);
+}
+.stage-divider {
+  width: 1px;
+  height: 50px;
+  background-color: var(--color-cream);
+}
+.stage-desc {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-cream);
+  padding-left: 28px;
+}
+@media screen and (max-width: 900px) {
+  .stage-row {
+    grid-template-columns: auto 1fr;
+    column-gap: 1.25rem;
+    row-gap: 0.35rem;
+    align-items: start;
+    min-height: 0;
+    padding: 1.25rem 1.5rem;
+  }
+  .stage-number { grid-row: 1 / span 2; font-size: 2.25rem; }
+  .stage-divider { display: none; }
+  .stage-desc { padding-left: 0; }
+}
+.grid-1x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.green-card_one {
+  background-color: var(--color-dark-panel-card);
+  border: 1px solid var(--color-dark-panel-border);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+.green-card_one .paragraph-style { color: var(--color-sage-text); }
+.grid-inner { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.75rem; }
+
+.content-green-wrapper { display: flex; flex-direction: column; gap: 2.5rem; }
+/* Measured from the approved design: heading column 649px / copy column 606px
+   with a 48px gutter, copy at 14px/1.55 in Off White, and a 1px Off White rule
+   across the full block width 56px below the last line. */
+.content-green-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 649fr) minmax(0, 606fr);
+  column-gap: 3rem;
+  align-items: start;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--color-cream);
+}
+.content-left { display: flex; flex-direction: column; align-items: flex-start; }
+.content-green-wrap .text-24-bold-caps { max-width: 24rem; }
+.content-left .list-16px { margin-top: 1.75rem; max-width: 24rem; }
+.content-wrap .paragraph-style, .content-wrap p { color: var(--color-sage-text); }
+.content-green-wrap .content-wrap .paragraph-style,
+.content-green-wrap .content-wrap p {
+  font-family: var(--font-body);
+  color: var(--color-cream);
+}
+.content-green-wrap .paragraph-style._16px { font-size: 0.875rem; line-height: 1.55; }
+.list-16px {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.25rem;
+}
+.list-16px li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding-left: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--color-cream);
+}
+/* Benefit items reveal one after another as the block scrolls into view */
+.list-16px li {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.list-16px li.is-visible { opacity: 1; transform: translateY(0); }
+.list-16px li:nth-child(2) { transition-delay: 0.08s; }
+.list-16px li:nth-child(3) { transition-delay: 0.16s; }
+.list-16px li:nth-child(4) { transition-delay: 0.24s; }
+.list-16px li:nth-child(5) { transition-delay: 0.32s; }
+@media (prefers-reduced-motion: reduce) {
+  .list-16px li {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0s;
+  }
+}
+/* Feather icons (MIT), inlined - stroke inherits currentColor */
+.list-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.375rem;
+  height: 1.375rem;
+  border-radius: 50%;
+  margin-top: 0.02rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #81B1B9;
+}
+.list-icon svg { width: 0.8125rem; height: 0.8125rem; }
+@media screen and (max-width: 860px) {
+  .content-green-wrap { grid-template-columns: 1fr; row-gap: 1.25rem; padding-bottom: 2.5rem; }
+  .content-green-wrap .text-24-bold-caps { max-width: none; }
+}
+
+@media screen and (max-width: 860px) {
+  .grid-1x4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media screen and (max-width: 560px) {
+  .grid-1x4 { grid-template-columns: 1fr; }
+}
+
+/* ---------- Capital / problem-we-solve section ---------- */
+.section-capital { padding-top: 4rem; padding-bottom: 4rem; }
+/* ---------- Legal content (Terms of Use, Privacy, etc.) ---------- */
+.container-legal { max-width: 46rem; margin: 0 auto; padding-top: 3rem; padding-bottom: 5rem; }
+.legal-header { max-width: 46rem; margin: 0 auto; padding: 0 0 2rem; text-align: center; }
+.legal-eyebrow { display: inline-block; font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-accent); background: rgba(149,41,68,0.08); padding: 0.4rem 0.9rem; border-radius: 999px; margin-bottom: 1.1rem; }
+.legal-heading { font-family: var(--font-heading); font-size: clamp(1.75rem, 4vw, 2.4rem); font-weight: 700; color: var(--color-ink); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 0.6rem; }
+.legal-updated { font-family: var(--font-body); font-size: 0.8rem; color: var(--color-ink-soft); }
+.legal-wrap { max-width: 46rem; margin: 0 auto; }
+.legal-content h2 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-ink); margin: 2.5rem 0 0.75rem; padding-top: 1.25rem; border-top: 1px solid rgba(26,72,72,0.12); }
+.legal-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+.legal-content p { font-family: var(--font-body); font-size: 0.9rem; color: var(--color-ink-soft); line-height: 1.75; margin-bottom: 0.9rem; }
+.legal-content ul, .legal-content ol { margin: 0 0 0.9rem 0; padding-left: 1.25rem; }
+.legal-content li { font-family: var(--font-body); font-size: 0.9rem; color: var(--color-ink-soft); line-height: 1.75; margin-bottom: 0.4rem; }
+.legal-content ol li { margin-bottom: 0.5rem; }
+.legal-content a { color: var(--color-steel-blue); font-weight: 600; text-decoration: underline; }
+.legal-content strong { color: var(--color-ink); }
+.legal-contact { background: var(--color-cream-alt, #F3EEE1); border-radius: 12px; padding: 1.25rem 1.5rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--color-ink); line-height: 1.8; }
+.legal-contact strong { display: block; margin-bottom: 0.25rem; }
+@media screen and (max-width: 640px) {
+  .legal-header { padding: 0 5vw 2rem; }
+  .container-legal { padding-left: 5vw; padding-right: 5vw; }
+}
+.capital_layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+.img-wrapper-537 { border-radius: 16px; overflow: hidden; }
+.img-wrapper-537 .image-full, .img-wrapper-537 img { width: 100%; height: auto; }
+@media screen and (max-width: 860px) {
+  .capital_layout { grid-template-columns: 1fr; }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+  padding-top: 4rem;
+  padding-bottom: 2.5rem;
+}
+.footer_layout { display: flex; flex-direction: column; }
+.first-part { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer_first-part {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.image-footer_wrapper { border-radius: 16px; overflow: hidden; }
+.image-footer_wrapper .image-full, .image-footer_wrapper img { width: 100%; height: auto; }
+.vertical-wrapper { display: flex; flex-direction: column; }
+.gap-20 { gap: 20px; }
+.grid-3-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.card-footer-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+}
+.card-footer-logo { height: 26px; display: flex; align-items: center; }
+.card-footer-logo img { height: 100%; width: auto; }
+.card-footer-wrap .line-20-bottom {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(26, 72, 72, 0.15);
+}
+.card-footer-wrap .text-14-bold-caps.green { color: var(--color-ink-soft); }
+.card-footer-wrap .paragraph-style.green { color: var(--color-ink); }
+.card-footer-wrap .link-conect {
+  color: var(--color-ink);
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+.card-footer-wrap .link-conect svg { flex-shrink: 0; }
+.link-conect {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.space-between-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-dark-panel-border);
+}
+.gap-52 { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.image-footer_wrapper.mobile-only { display: none; }
+@media screen and (max-width: 860px) {
+  .footer_first-part { grid-template-columns: 1fr; }
+  .footer_first-part .image-footer_wrapper.desktop-only { display: none; }
+  .image-footer_wrapper.mobile-only { display: block; }
+  .grid-3-footer { grid-template-columns: 1fr; }
+}
+
+/* ---------- Footer (shared with rest of site) ---------- */
+  #footer-sitemap { padding-top: 24px; padding-bottom: 24px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+  .sitemap-heading { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF; margin-bottom: 14px; }
+  .sitemap-col { display: flex; flex-direction: column; gap: 12px; }
+  .sitemap-col a { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; cursor: pointer; }
+  .sitemap-col a:hover { color: #fff; }
+  #footer-bottom-bar { padding-top: 16px; padding-bottom: 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  #footer-copyright { font-size: 10px; letter-spacing: 0.02em; }
+  #footer-bottom-links { display: flex; gap: 20px; }
+  #footer-bottom-links a { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.55); text-decoration: none; }
+  #footer-bottom-links a:hover { color: #fff; text-decoration: underline; }
+  @media (max-width: 700px) {
+    #footer-sitemap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  #dash-footer { width: 100%; background: var(--color-ink); color: rgba(255,255,255,0.55); font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.04em; display: flex; flex-direction: column; }
+  .footer-block { width: 100%; box-sizing: border-box; }
+  .footer-divider { border-top: 1px solid rgba(255,255,255,0.15); }
+  #footer-sitemap, #footer-bottom-bar { max-width: 1200px; margin: 0 auto; padding-left: 32px; padding-right: 32px; box-sizing: border-box; }
+  #dash-footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.15s; }
+  #dash-footer a:hover { color: #fff; }
+</style></div><div role="banner" class="navigation"><div class="padding-global"><div class="container-large nav"><a href="https://www.igvcapital.com" aria-current="page" class="brand-logo"><div class="logo-embed invert"><svg width="164" height="31" viewBox="0 0 164 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M29.5463 0.592289H33.5677V26.253H27.8044V2.32404C27.8044 1.37125 28.5814 0.592289 29.5463 0.592289Z" fill="#1A4848"/>
+<path d="M74.4352 16.9248L80.5029 1.84119C80.8072 1.08154 81.5454 0.585827 82.3678 0.585827H87.2504L76.8765 26.2466H72.0004L61.6264 0.585827H67.8689L74.4417 16.9183L74.4352 16.9248Z" fill="#1A4848"/>
+<path d="M56.7891 13.1845H60.7004V22.2874C58.1425 25.1264 54.5939 26.5427 50.0674 26.5427C46.2792 26.5427 43.0932 25.2938 40.5224 22.796C37.9515 20.2981 36.6629 17.1501 36.6629 13.3454C36.6629 9.54071 37.971 6.36692 40.5936 3.81758C43.2162 1.27468 46.3763 0 50.0804 0C53.7844 0 57.0028 1.2103 59.7355 3.63089L57.877 6.29609C57.2942 7.133 56.1416 7.37119 55.2997 6.79823C54.6845 6.37978 54.1082 6.06433 53.5513 5.85189C52.58 5.47206 51.5244 5.28538 50.3912 5.28538C48.2025 5.28538 46.3569 6.02571 44.8545 7.50639C43.3522 8.98706 42.601 10.9377 42.601 13.3583C42.601 15.7789 43.3198 17.7231 44.7639 19.178C46.208 20.6329 47.924 21.3604 49.912 21.3604C51.9 21.3604 53.5707 20.9805 54.8982 20.2209V15.045C54.8982 14.0085 55.7401 13.1716 56.7827 13.1716L56.7891 13.1845Z" fill="#1A4848"/>
+<path d="M24.0749 13.2632L21.3879 1.55714C21.1872 0.682068 20.307 0.14472 19.4345 0.359651C18.562 0.574581 18.006 1.4727 18.2068 2.34009L20.9787 14.4069C21.1795 15.2743 20.0599 15.8116 19.4962 15.1131L11.9525 5.70988C11.3812 4.99601 10.2307 4.74271 9.41224 5.14954C8.58607 5.55638 8.3853 6.4775 8.95668 7.19905L16.9328 17.1473C17.4887 17.8458 16.7166 18.813 15.9058 18.4215L4.74087 13.0789C3.96874 12.7105 2.99586 12.9254 2.54802 13.6546C2.0307 14.4913 2.37043 15.566 3.23522 15.9805L14.4851 21.3691C15.2881 21.7529 15.0179 22.9581 14.1222 22.9581H1.63691C0.733518 22.9581 0 23.6873 0 24.5854C0 25.4835 0.733518 26.2127 1.63691 26.2127H22.8318C23.519 26.2127 24.0672 25.66 24.0672 24.9846V13.2555L24.0749 13.2632Z" fill="#952944"/>
+<path d="M93.636 25.7762C91.8909 25.7762 90.393 25.1852 89.1345 24.0107C87.8759 22.8286 87.2505 21.2934 87.2505 19.3821C87.2505 17.4707 87.9068 15.9278 89.2194 14.7303C90.532 13.5329 92.1303 12.9418 94.0143 12.9418C95.8983 12.9418 97.4966 13.5866 98.7938 14.8839L97.2418 16.7799C96.1608 15.8434 95.0644 15.3751 93.968 15.3751C92.8716 15.3751 91.9141 15.7359 91.1034 16.4651C90.2926 17.1944 89.8911 18.1309 89.8911 19.2746C89.8911 20.4183 90.2927 21.3932 91.0957 22.1915C91.8987 22.9898 92.8793 23.389 94.0529 23.389C95.2265 23.389 96.3307 22.8593 97.3653 21.7924L98.9173 23.4811C97.3962 25.0086 95.6358 25.7762 93.636 25.7762Z" fill="#1A4848"/>
+<path d="M111.711 25.592H109.31V23.9263C108.276 25.1622 106.886 25.7762 105.141 25.7762C103.836 25.7762 102.755 25.4078 101.898 24.6786C101.041 23.9417 100.616 22.9668 100.616 21.7386C100.616 20.5104 101.072 19.597 101.983 18.9829C102.894 18.3765 104.129 18.0694 105.681 18.0694H109.102V17.6012C109.102 15.9432 108.175 15.1218 106.322 15.1218C105.156 15.1218 103.952 15.544 102.693 16.3884L101.512 14.7457C103.033 13.5406 104.762 12.9418 106.693 12.9418C108.167 12.9418 109.372 13.3103 110.306 14.0549C111.24 14.7994 111.711 15.9662 111.711 17.5552V25.592ZM109.071 20.9557V19.904H106.098C104.199 19.904 103.249 20.4951 103.249 21.6849C103.249 22.2913 103.488 22.7595 103.959 23.0819C104.43 23.4043 105.087 23.5655 105.928 23.5655C106.77 23.5655 107.503 23.3276 108.129 22.8593C108.754 22.3911 109.071 21.7617 109.071 20.9633V20.9557Z" fill="#1A4848"/>
+<path d="M122.104 12.9418C123.788 12.9418 125.224 13.5175 126.413 14.6766C127.61 15.8357 128.204 17.3709 128.204 19.2899C128.204 21.209 127.61 22.7749 126.428 23.9724C125.239 25.1775 123.857 25.7762 122.282 25.7762C120.707 25.7762 119.286 25.0854 118.027 23.7114V30.1286H115.387V13.1184H118.027V15.2984C119.062 13.7248 120.421 12.9341 122.104 12.9341V12.9418ZM117.981 19.3821C117.981 20.5718 118.344 21.539 119.062 22.299C119.788 23.0589 120.668 23.435 121.703 23.435C122.737 23.435 123.641 23.0589 124.413 22.3143C125.185 21.5621 125.571 20.5949 125.571 19.3974C125.571 18.1999 125.193 17.2097 124.444 16.4191C123.687 15.6285 122.784 15.237 121.734 15.237C120.684 15.237 119.796 15.6285 119.07 16.4191C118.344 17.2097 117.989 18.1923 117.989 19.3821H117.981Z" fill="#1A4848"/>
+<path d="M131.385 10.6467C131.053 10.3166 130.891 9.92513 130.891 9.47224C130.891 9.01935 131.053 8.62787 131.385 8.2978C131.717 7.96773 132.111 7.80652 132.567 7.80652C133.022 7.80652 133.416 7.96773 133.748 8.2978C134.08 8.62787 134.242 9.01935 134.242 9.47224C134.242 9.92513 134.08 10.3166 133.748 10.6467C133.416 10.9768 133.022 11.1379 132.567 11.1379C132.111 11.1379 131.717 10.9768 131.385 10.6467ZM133.864 25.592H131.223V13.126H133.864V25.592Z" fill="#1A4848"/>
+<path d="M140.929 15.237V21.5621C140.929 22.1531 141.083 22.629 141.4 22.9821C141.716 23.3352 142.156 23.5118 142.72 23.5118C143.284 23.5118 143.824 23.2355 144.349 22.6905L145.43 24.5404C144.504 25.3694 143.477 25.7839 142.357 25.7839C141.238 25.7839 140.272 25.4001 139.485 24.6248C138.69 23.8495 138.296 22.8056 138.296 21.5007V15.2447H136.721V13.1337H138.296V9.21892H140.937V13.1337H144.234V15.2447H140.937L140.929 15.237Z" fill="#1A4848"/>
+<path d="M157.684 25.592H155.283V23.9263C154.248 25.1622 152.858 25.7762 151.113 25.7762C149.808 25.7762 148.727 25.4078 147.87 24.6786C147.013 23.9417 146.589 22.9668 146.589 21.7386C146.589 20.5104 147.044 19.597 147.955 18.9829C148.866 18.3765 150.102 18.0694 151.654 18.0694H155.074V17.6012C155.074 15.9432 154.148 15.1218 152.295 15.1218C151.129 15.1218 149.924 15.544 148.666 16.3884L147.484 14.7457C149.005 13.5406 150.735 12.9418 152.665 12.9418C154.14 12.9418 155.344 13.3103 156.279 14.0549C157.213 14.7994 157.684 15.9662 157.684 17.5552V25.592ZM155.043 20.9557V19.904H152.071C150.171 19.904 149.221 20.4951 149.221 21.6849C149.221 22.2913 149.461 22.7595 149.932 23.0819C150.403 23.4043 151.059 23.5655 151.901 23.5655C152.742 23.5655 153.476 23.3276 154.101 22.8593C154.727 22.3911 155.043 21.7617 155.043 20.9633V20.9557Z" fill="#1A4848"/>
+<path d="M164 25.592H161.359V8.21335H164V25.592Z" fill="#1A4848"/>
+</svg>
+</div></a><nav role="navigation" class="nav-wrapper"><div class="nav-links-group"><div class="navlink-investment">Investment Opportunities</div><div class="navlink-division"><div>IGV Divisions</div></div><a href="https://www.igvhousing.com/esg" target="_blank" rel="noopener" class="navlink">ESG Impact</a><a href="https://igvhousing.com/about" target="_blank" rel="noopener" class="navlink">About IGV</a><a href="https://www.igvhousing.com/media" target="_blank" rel="noopener" class="navlink">Media &amp; Resources</a></div><a href="#" class="btm-nav visible">Contact Us</a></nav><div class="nav-actions-mobile"><div class="menu-burger nav-button"><div class="icon-nav-menu"><span></span></div></div></div></div><div class="dropdown_nav_division"><div class="dropdown-nav-title">Making Homes Easier to Build and Possible to Own</div><div class="grid-4_nav"><a href="https://igvhousing.com/" target="_blank" class="card_nav-wrap-v2 inline-block"><div class="image-wrapper_nav"><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a260b875f385abfe6f06e1d_ChatGPT%20Image%20Apr%2030%2C%202026%2C%2002_33_27%20PM%204.png" alt="" class="image-full-nav"/></div><div class="spacer _28"></div><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a2884c407c5e40e89ae90c9_IGV%20Housing%20Logo_Dark.svg" alt="" class="img-logo"/><div class="spacer _18"></div><div class="space-betwenn_nav"><p class="p-style black _13px">The housing system has stopped working for everyday people. IGV Housing brings together the build systems, ownership pathways, and financial architecture needed to change that.</p><div class="explore_light-btn"><div>Explore IGV Housing</div><div class="arrow-center-embed"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9035 0.998814C11.9035 0.446529 11.4558 -0.00118672 10.9035 -0.0011863L1.90353 -0.00118618C1.35125 -0.00118651 0.90353 0.446529 0.90353 0.998814C0.90353 1.5511 1.35125 1.99881 1.90353 1.99881L9.90353 1.99881L9.90353 9.99881C9.90353 10.5511 10.3512 10.9988 10.9035 10.9988C11.4558 10.9988 11.9035 10.5511 11.9035 9.99881L11.9035 0.998814ZM0.710938 11.1914L1.41804 11.8985L11.6106 1.70592L10.9035 0.998814L10.1964 0.291707L0.00383073 10.4843L0.710938 11.1914Z" fill="#1A4848"/></svg></div></div></div><a href="https://igvbuild.com/" target="_blank" class="card_nav-wrap-v2 inline-block"><div class="image-wrapper_nav"><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a260b875f385abfe6f06e1b_Rectangle%20574056974.png" alt="" class="image-full-nav"/></div><div class="spacer _28"></div><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a2884c461acdb2aa2c9b71e_Group%2027.svg" alt="" class="img-logo"/><div class="spacer _18"></div><div class="space-betwenn_nav"><p class="p-style black _13px">Pre-engineered building systems and direct material supply for developers and contractors</p><div class="explore_light-btn"><div>Explore IGV Build Systems</div><div class="arrow-center-embed"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9035 0.998814C11.9035 0.446529 11.4558 -0.00118672 10.9035 -0.0011863L1.90353 -0.00118618C1.35125 -0.00118651 0.90353 0.446529 0.90353 0.998814C0.90353 1.5511 1.35125 1.99881 1.90353 1.99881L9.90353 1.99881L9.90353 9.99881C9.90353 10.5511 10.3512 10.9988 10.9035 10.9988C11.4558 10.9988 11.9035 10.5511 11.9035 9.99881L11.9035 0.998814ZM0.710938 11.1914L1.41804 11.8985L11.6106 1.70592L10.9035 0.998814L10.1964 0.291707L0.00383073 10.4843L0.710938 11.1914Z" fill="#1A4848"/></svg></div></div></div></a><a href="https://igvhope.com/" target="_blank" class="card_nav-wrap-v2 inline-block"><div class="image-wrapper_nav"><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a260b875f385abfe6f06e19_Rectangle%20574056975.png" alt="" class="image-full-nav"/></div><div class="spacer _28"></div><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a2884c4280028c923ecd96c_Group%20147.svg" alt="" class="img-logo"/><div class="spacer _18"></div><div class="space-betwenn_nav"><p class="p-style black _13px">An ownership-transition platform giving everyday people a practical path into home ownership.</p><div class="explore_light-btn"><div>Explore IGVhope</div><div class="arrow-center-embed"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9035 0.998814C11.9035 0.446529 11.4558 -0.00118672 10.9035 -0.0011863L1.90353 -0.00118618C1.35125 -0.00118651 0.90353 0.446529 0.90353 0.998814C0.90353 1.5511 1.35125 1.99881 1.90353 1.99881L9.90353 1.99881L9.90353 9.99881C9.90353 10.5511 10.3512 10.9988 10.9035 10.9988C11.4558 10.9988 11.9035 10.5511 11.9035 9.99881L11.9035 0.998814ZM0.710938 11.1914L1.41804 11.8985L11.6106 1.70592L10.9035 0.998814L10.1964 0.291707L0.00383073 10.4843L0.710938 11.1914Z" fill="#1A4848"/></svg></div></div></div><a href="https://igvcapital.com/" class="card_nav-wrap-v2 inline-block"><div class="image-wrapper_nav"><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a260b875f385abfe6f06e13_ChatGPT%20Image%20Apr%2030%2C%202026%2C%2002_33_27%20PM%203.png" alt="" class="image-full-nav"/></div><div class="spacer _28"></div><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a2884c4e7089d6748d05c23_Group%20150.svg" alt="" class="img-logo"/><div class="spacer _18"></div><div class="space-betwenn_nav"><p class="p-style black _13px">The financial architecture required to deliver housing and home ownership at scale.</p><div class="explore_light-btn"><div>Explore IGV Capital</div><div class="arrow-center-embed"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9035 0.998814C11.9035 0.446529 11.4558 -0.00118672 10.9035 -0.0011863L1.90353 -0.00118618C1.35125 -0.00118651 0.90353 0.446529 0.90353 0.998814C0.90353 1.5511 1.35125 1.99881 1.90353 1.99881L9.90353 1.99881L9.90353 9.99881C9.90353 10.5511 10.3512 10.9988 10.9035 10.9988C11.4558 10.9988 11.9035 10.5511 11.9035 9.99881L11.9035 0.998814ZM0.710938 11.1914L1.41804 11.8985L11.6106 1.70592L10.9035 0.998814L10.1964 0.291707L0.00383073 10.4843L0.710938 11.1914Z" fill="#1A4848"/></svg></div></div></div></a></div></div></div><div class="dropdown_nav_investment"><div class="grid-4_nav grid-2-investment"><a href="https://www.igvcapital.com/housing-accelerator-program" class="card_nav-wrap-v2 inline-block"><div class="image-wrapper_nav"><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a260b875f385abfe6f06e13_ChatGPT%20Image%20Apr%2030%2C%202026%2C%2002_33_27%20PM%203.png" alt="" class="image-full-nav"/></div><div class="spacer _28"></div><h3 class="heading-style-h3">Housing Accelerator Program</h3><div class="spacer _18"></div><div class="space-betwenn_nav"><p class="p-style black _13px">Development Partner Loan opportunities backed by three integrated sources of certainty across the housing lifecycle.</p><div class="explore_light-btn"><div>Explore the Housing Accelerator Program</div><div class="arrow-center-embed"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9035 0.998814C11.9035 0.446529 11.4558 -0.00118672 10.9035 -0.0011863L1.90353 -0.00118618C1.35125 -0.00118651 0.90353 0.446529 0.90353 0.998814C0.90353 1.5511 1.35125 1.99881 1.90353 1.99881L9.90353 1.99881L9.90353 9.99881C9.90353 10.5511 10.3512 10.9988 10.9035 10.9988C11.4558 10.9988 11.9035 10.5511 11.9035 9.99881L11.9035 0.998814ZM0.710938 11.1914L1.41804 11.8985L11.6106 1.70592L10.9035 0.998814L10.1964 0.291707L0.00383073 10.4843L0.710938 11.1914Z" fill="#1A4848"/></svg></div></div></div></a><a href="https://www.igvcapital.com/LTD" class="card_nav-wrap-v2 inline-block"><div class="image-wrapper_nav"><img loading="lazy" src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a2620bf3c7887f17d4d8965_img.png" alt="" class="image-full-nav"/></div><div class="spacer _28"></div><h3 class="heading-style-h3">LTD Fund</h3><div class="spacer _18"></div><div class="space-betwenn_nav"><p class="p-style black _13px">Long-term, insurance-backed financing structures supporting stabilized residential housing assets.</p><div class="explore_light-btn"><div>Explore LTD Fund</div><div class="arrow-center-embed"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9035 0.998814C11.9035 0.446529 11.4558 -0.00118672 10.9035 -0.0011863L1.90353 -0.00118618C1.35125 -0.00118651 0.90353 0.446529 0.90353 0.998814C0.90353 1.5511 1.35125 1.99881 1.90353 1.99881L9.90353 1.99881L9.90353 9.99881C9.90353 10.5511 10.3512 10.9988 10.9035 10.9988C11.4558 10.9988 11.9035 10.5511 11.9035 9.99881L11.9035 0.998814ZM0.710938 11.1914L1.41804 11.8985L11.6106 1.70592L10.9035 0.998814L10.1964 0.291707L0.00383073 10.4843L0.710938 11.1914Z" fill="#1A4848"/></svg></div></div></div></a></div></div></div><main class="main-wrapper">
+<section class="section-legal">
+  <div class="padding-global">
+    <div class="container-legal">
+<div class="legal-header">
+  <div class="legal-eyebrow">Legal</div>
+  <h1 class="legal-heading">Terms of Use</h1>
+  <p class="legal-updated">Last updated: 08.13.2026</p>
+</div>
+
+<div class="legal-wrap">
+  <div class="legal-content">
+
+    <p>Welcome to the IGV Housing Limited website. These Terms of Use explain the rules that apply when you access or use this website, submit information through our forms, register your interest, watch embedded content, chat with our AI assistant, or communicate with us through this website.</p>
+    <p>By using this website, you agree to these Terms of Use. If you do not agree, please do not use this website.</p>
+    <p>For the purposes of these Terms of Use, "IGV Housing," "IGVhousing," "IGV," "we," "us," and "our" refer to IGV Housing Limited/Inc. and, where applicable, its related divisions and programs, including IGV Build Systems, IGV Capital, and IGVhope.</p>
+
+    <h2>1. About IGV Housing Limited</h2>
+    <p>IGV Housing Limited is a British Columbia-based housing company working across housing delivery, building systems, ownership pathways, and related housing initiatives.</p>
+    <p>This website provides general information about IGV Housing Limited, IGV Build Systems, IGV Capital, IGVhope, projects, services, opportunities, news, careers, partnerships, land opportunities, investor interest, and related initiatives.</p>
+    <p>Information on this website is provided for general informational purposes only. It does not create a legal, financial, construction, development, tenancy, purchase, investment, lending, employment, partnership, or other contractual relationship unless and until a separate written agreement is signed by the applicable parties.</p>
+    <p>Information on this site has been prepared in good faith from sources IGV Housing believes to be reliable, but we make no warranty as to its accuracy or completeness and accept no liability for errors or omissions.</p>
+
+    <h2>2. Eligibility and Age Requirement</h2>
+    <p>This website is intended for individuals who are at least 19 years old.</p>
+    <p>By using this website, submitting information through a form, or chatting with Haven, you confirm that you are 19 years of age or older and that the information you provide is accurate to the best of your knowledge.</p>
+
+    <h2>3. No Guarantee of Eligibility, Availability, or Approval</h2>
+    <p>Submitting a form, registering interest, joining a mailing list, or communicating with IGV Housing Limited does not guarantee:</p>
+    <ul>
+      <li>Acceptance into any IGV Housing program</li>
+      <li>Eligibility for a home, product, service, project, partnership, investment, employment, or opportunity</li>
+      <li>Availability of a specific home, model, project, location, release, price, production slot, financing structure, or timeline</li>
+      <li>Approval for tenancy, financing, mortgage readiness, insurance, investment participation, partnership, employment, supplier onboarding, or any other opportunity</li>
+      <li>A right to purchase, lease, occupy, invest in, reserve, build, develop, or otherwise secure any property, product, project, or service</li>
+      <li>A future ownership, investment, construction, development, employment, or business outcome</li>
+    </ul>
+    <p>All participation in IGV Housing programs, services, projects, products, investment opportunities, employment opportunities, or partnerships is subject to further review, documentation, legal agreements, availability, applicable laws, financing, underwriting, development timelines, production capacity, site requirements, regulatory approvals, and other conditions.</p>
+    <p>Properties, developments, and unit counts referenced on this site are subject to council approval, permitting, and other regulatory processes, and are not guaranteed to proceed as described.</p>
+
+    <h2>4. No Legal, Financial, Mortgage, Tax, Insurance, Construction, Development, or Investment Advice</h2>
+    <p>The information on this website, including any information provided through Haven, our AI chat assistant, is not legal, financial, mortgage, tax, investment, real estate, insurance, construction, development, engineering, architectural, or professional advice.</p>
+    <p>You should obtain independent professional advice before making decisions about housing, tenancy, ownership, financing, investment, development, construction, land, legal rights, tax matters, insurance, employment, or participation in any IGV Housing program, service, project, or opportunity.</p>
+    <p>Nothing on this website should be interpreted as a recommendation, offer, solicitation, guarantee, or promise of financial return, investment performance, property value growth, mortgage approval, legal outcome, insurance approval, tenancy approval, construction outcome, development approval, employment offer, or future home ownership.</p>
+
+    <h2>5. IGV Build Systems Information</h2>
+    <p>Information about IGV Build Systems, building models, materials, Smart Core components, timelines, construction methods, manufacturing capacity, delivery processes, costs, specifications, performance, certifications, approvals, or project outcomes is provided for general informational purposes only.</p>
+    <p>Actual project scope, pricing, timelines, specifications, responsibilities, approvals, delivery requirements, site conditions, and construction outcomes may vary by project and must be confirmed through separate project documentation and written agreements.</p>
+    <p>Website content should not be relied on as a substitute for project-specific architectural, engineering, construction, code, zoning, permitting, legal, or cost advice.</p>
+
+    <h2>6. IGV Capital Information</h2>
+    <p>Information about IGV Capital, housing pathways, future ownership, program models, eligibility, availability, timelines, pricing, tenancy structures, purchase structures, or resident outcomes is provided for general informational purposes only. Nothing on this site is an offer of tenancy or an agreement of purchase and sale.</p>
+    <p>Participation in the IGV Capital program, if available, is subject to eligibility, review of your expression of interest, documentation, execution of a formal occupancy and purchase agreement, property availability, financing, underwriting, insurance, program requirements, and other conditions.</p>
+    <p>Homeownership involves financial commitment and risk. By using this site in connection with IGV Capital, you acknowledge that:</p>
+    <ol>
+      <li>Housing markets can rise or fall, and the future value of any home is not guaranteed;</li>
+      <li>Occupancy contributions and Year 10 purchase terms are illustrative and subject to change based on individual eligibility, property availability, and final agreement terms;</li>
+      <li>IGV Housing does not guarantee mortgage qualification, program eligibility, or that any participant will ultimately complete a home purchase; and</li>
+      <li>You should seek independent legal, financial, and tax advice before entering into any occupancy contribution or home purchase arrangement.</li>
+    </ol>
+    <p>Past program outcomes are not indicative of future results. IGV Housing does not guarantee future ownership, mortgage approval, property value growth, investment return, tenancy approval, or any specific housing outcome.</p>
+
+    <h2>7. Haven, Our AI Chat Assistant</h2>
+    <p>Haven is an AI chat assistant available on this website that answers general questions about the IGV Capital program. Haven is not a person. Its answers are generated automatically by artificial intelligence and are not reviewed by our team before being sent to you.</p>
+    <p>Haven does not create or vary any contract or agreement between you and IGV Housing. Its responses are general information only, not legal, financial, or tax advice, and may occasionally be incomplete, outdated, or incorrect.</p>
+    <p>By using Haven, you agree not to rely on its responses in place of IGV Housing's official program documents, published policies, or your formal occupancy and purchase agreement. Where anything Haven says conflicts with those documents, the documents govern. You agree to independently verify any information Haven provides, and to confirm eligibility, pricing, occupancy contributions, and purchase terms directly with an IGV Housing team member before making any decision based on it.</p>
+    <p>Conversations with Haven may be recorded and stored to improve our service and for training purposes, and are handled in accordance with our Privacy Policy.</p>
+
+    <h2>8. Investment-Related Information</h2>
+    <p>This website may include general information about IGV Capital, funding models, investor interest, capital participation, project financing, or related opportunities.</p>
+    <p>Any such information is provided for general informational purposes only and does not constitute an offer to sell, a solicitation to buy, or a recommendation of any security, investment product, financial arrangement, or investment opportunity.</p>
+    <p>Any investment-related opportunity, if made available, will be subject to separate legal documents, risk disclosures, eligibility requirements, investor suitability review, and applicable securities laws.</p>
+    <p>You should seek independent legal, financial, tax, and investment advice before making any investment decision.</p>
+
+    <h2>9. Careers Information</h2>
+    <p>Submitting a resume, application, or career enquiry does not guarantee an interview, employment offer, contract, or future opportunity with IGV Housing Limited.</p>
+    <p>Any employment or contractor relationship will be subject to separate review, references, eligibility requirements, documentation, and written agreements.</p>
+
+    <h2>10. Land Seller, Developer, Contractor, Partner, and Media Enquiries</h2>
+    <p>Submitting a land seller, developer, contractor, partner, supplier, community, investor, or media enquiry does not create a business relationship, partnership, agency relationship, confidentiality obligation, exclusivity arrangement, or right to proceed with any opportunity.</p>
+    <p>Any opportunity will be subject to review, due diligence, documentation, internal approval, legal agreements, and applicable laws.</p>
+    <p>Please do not submit confidential, proprietary, or sensitive business information through general website forms unless we have requested it through an appropriate process.</p>
+
+    <h2>11. Program, Product, and Website Information May Change</h2>
+    <p>IGV Housing Limited is a growing company, and our programs, products, services, projects, timelines, models, costs, specifications, availability, eligibility criteria, legal structures, investment opportunities, employment opportunities, and partnership pathways may change without notice.</p>
+    <p>We make reasonable efforts to keep website information accurate and current, but we do not guarantee that all information is complete, accurate, current, or error-free at all times.</p>
+
+    <h2>12. Property Values and Market Conditions</h2>
+    <p>Any references to home values, market growth, affordability, ownership pathways, fixed purchase pricing, future equity, project economics, cost savings, speed, efficiency, investment potential, or financial outcomes are for general explanation only.</p>
+    <p>Real estate markets, construction markets, labour markets, financing conditions, supply chains, interest rates, and regulatory conditions can change. IGV Housing Limited does not guarantee property values, market performance, mortgage approval, investment return, project approval, construction timeline, cost outcome, ownership completion, or financial outcome.</p>
+
+    <h2>13. Use of the Website</h2>
+    <p>You agree to use this website only for lawful purposes and in a way that does not harm IGV Housing Limited, our divisions, users, partners, service providers, employees, contractors, or the operation of the website.</p>
+    <p>You must not:</p>
+    <ul>
+      <li>Submit false, misleading, or unauthorized information</li>
+      <li>Submit information on behalf of another person without permission</li>
+      <li>Attempt to access systems, accounts, data, or areas of the website without permission</li>
+      <li>Interfere with website security, performance, or availability</li>
+      <li>Use the website to distribute spam, malware, harmful code, or unlawful content</li>
+      <li>Copy, scrape, reproduce, or misuse website content without permission</li>
+      <li>Use the website in a way that violates applicable laws or the rights of others</li>
+    </ul>
+    <p>We may restrict, suspend, or block access to the website if we believe these Terms of Use have been violated.</p>
+
+    <h2>14. Information You Submit</h2>
+    <p>When you submit information through this website, including through forms or in conversation with Haven, you confirm that the information is accurate to the best of your knowledge and that you have the right to provide it.</p>
+    <p>You are responsible for the content of any message, enquiry, application, document, or information you submit.</p>
+    <p>Please do not submit highly sensitive information through general website forms or through Haven unless specifically requested through a secure process. This includes detailed financial records, government-issued identification, banking information, medical information, credit reports, proprietary business information, or other sensitive documents.</p>
+    <p>Information you submit will be handled in accordance with our Privacy Policy.</p>
+
+    <h2>15. Email Communications</h2>
+    <p>By submitting your contact information, you may receive communications from IGV Housing Limited or its related divisions and programs, including IGV Build Systems, IGV Capital, and IGVhope, related to your enquiry, program updates, upcoming releases, events, resources, opportunities, or related initiatives.</p>
+    <p>You may unsubscribe from promotional email communications at any time using the unsubscribe link included in our emails. We may still send non-promotional or transactional messages where necessary.</p>
+
+    <h2>16. Third-Party Tools, Links, and Embedded Content</h2>
+    <p>This website may use or link to third-party tools and services, including Webflow, HubSpot, Google Analytics, Meta Pixel, Vimeo, reCAPTCHA, UserWay, and other website, analytics, advertising, accessibility, security, or media platforms.</p>
+    <p>This website may also include links to third-party websites, embedded videos, partner pages, tools, platforms, or resources, including municipal and other partner organizations. These are provided for convenience only, and hyperlinks to third-party or partner sites do not constitute an endorsement by IGV Housing of their content.</p>
+    <p>We do not control and are not responsible for third-party websites, services, content, privacy practices, terms, availability, or accuracy. Accessing third-party websites is at your own risk.</p>
+
+    <h2>17. Intellectual Property</h2>
+    <p>All website content, including text, graphics, logos, images, videos, layouts, icons, brand names, program names, product names, model names, diagrams, designs, and other materials, is owned by or licensed to IGV Housing Limited, unless otherwise stated.</p>
+    <p>You may view and use the website for personal, informational, or legitimate business enquiry purposes. You may not copy, reproduce, modify, distribute, publish, sell, or exploit website content without our prior written permission.</p>
+    <p>The IGV Housing name, IGV Build Systems name, IGV Capital name, IGVhope name, Haven name, related logos, brand assets, product names, model names, diagrams, and proprietary materials may not be used without permission.</p>
+
+    <h2>18. Website Availability</h2>
+    <p>We aim to keep the website available and functioning, but we do not guarantee uninterrupted, secure, or error-free access.</p>
+    <p>We may update, suspend, remove, restrict, or discontinue the website or any part of it, including Haven, at any time without notice.</p>
+
+    <h2>19. Disclaimer</h2>
+    <p>The website and its content, including responses generated by Haven, are provided "as is" and "as available."</p>
+    <p>To the fullest extent permitted by law, IGV Housing Limited and its related divisions, programs, directors, officers, employees, contractors, advisors, service providers, and affiliates disclaim all warranties, representations, and conditions, whether express, implied, statutory, or otherwise, including warranties of accuracy, completeness, fitness for a particular purpose, merchantability, availability, and non-infringement.</p>
+
+    <h2>20. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, IGV Housing Limited and its related divisions, programs, directors, officers, employees, contractors, partners, advisors, service providers, and affiliates will not be liable for any loss, damage, claim, cost, or expense arising from or related to:</p>
+    <ul>
+      <li>Your use of or inability to use the website</li>
+      <li>Reliance on website information, including information provided by Haven</li>
+      <li>Errors, omissions, or outdated information</li>
+      <li>Website interruptions, security issues, or technical problems</li>
+      <li>Third-party links, tools, platforms, or services</li>
+      <li>Decisions made based on website content</li>
+      <li>Submissions, enquiries, documents, or communications sent through the website or through Haven</li>
+      <li>Changes to IGV Housing programs, services, projects, products, timelines, eligibility requirements, availability, or related opportunities</li>
+    </ul>
+    <p>Nothing in these Terms of Use limits liability that cannot be limited under applicable law.</p>
+
+    <h2>21. Indemnity</h2>
+    <p>You agree to indemnify and hold harmless IGV Housing Limited and its related divisions, programs, directors, officers, employees, contractors, partners, advisors, service providers, and affiliates from any claims, losses, damages, liabilities, costs, or expenses arising from your misuse of the website, your violation of these Terms of Use, or your violation of any law or third-party rights.</p>
+
+    <h2>22. Governing Law</h2>
+    <p>These Terms of Use are governed by the laws of the Province of British Columbia and the applicable laws of Canada.</p>
+    <p>Any dispute related to these Terms of Use or your use of the website will be handled by the courts of British Columbia, unless applicable law requires otherwise.</p>
+
+    <h2>23. Changes to These Terms</h2>
+    <p>We may update these Terms of Use from time to time. The updated version will be posted on this page with a revised "Last updated" date.</p>
+    <p>Your continued use of the website after changes are posted means you accept the updated Terms of Use.</p>
+
+    <h2>24. Land Acknowledgment</h2>
+    <p>We acknowledge and thank the First Nations People, past, present, and future, for their stewardship, care, and leadership on the lands where we live, work and build. We are guests on these lands and acknowledge our responsibility to the land, its resources, and its people.</p>
+
+    <h2>25. Contact Us</h2>
+    <p>If you have questions about these Terms of Use, please contact:</p>
+    <div class="legal-contact">
+      <strong>IGV Housing Limited</strong>
+      4000 Stamp Ave.<br>
+      Port Alberni, BC V9Y 5J7<br>
+      Canada<br><br>
+      Phone: +1 778 348 6780<br>
+      Email: <a href="mailto:info@igvhousing.com">info@igvhousing.com</a>
+    </div>
+
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+</main><footer class="footer"><div class="padding-global"><div class="container-large"><div class="footer_layout reveal-on-scroll"><div class="footer_first-part"><div class="image-footer_wrapper desktop-only"><img src="images/footer-community.jpg" loading="lazy" alt="Aerial view of a multiplex neighbourhood with a shared community garden, playground and mountains behind" class="image-full"/></div><div class="content-wrap"><div class="text-14-bold-caps blue">get started</div><div class="spacer _22"></div><h2 class="heading-style-h2 white _397">Let's find the right conversation.</h2><div class="spacer _33"></div><p class="paragraph-style _374 font-montserrat">Wherever you sit in the housing equation, there's a place for you in the IGV platform.</p><div class="spacer _33"></div><div class="image-footer_wrapper mobile-only"><img src="images/footer-community.jpg" loading="lazy" alt="Aerial view of a multiplex neighbourhood with a shared community garden, playground and mountains behind" class="image-full"/></div><div class="spacer _33"></div><div class="vertical-wrapper gap-20"><a href="/contact" class="button stroke _100 inline-block"><div>Contact Investment Team</div></a></div></div></div><div class="spacer _186"></div><div class="grid-3-footer"><div class="card-footer-wrap"><div class="card-footer-logo"><img src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a2884c4e7089d6748d05c23_Group%20150.svg" loading="lazy" alt="IGV Capital"/></div><div class="first-part"><div class="line-20-bottom"></div><div class="text-14-bold-caps green">Invest with IGV Capital</div><div class="spacer _12"></div><p class="paragraph-style green">Whether you're seeking construction debt or long-term institutional exposure, IGV Capital structures investment opportunities aligned to your mandate.</p></div><a href="/contact" class="link-conect inline-block"><div>Request an Investor Brief</div><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9035 0.998814C11.9035 0.446529 11.4558 -0.00118672 10.9035 -0.0011863L1.90353 -0.00118618C1.35125 -0.00118651 0.90353 0.446529 0.90353 0.998814C0.90353 1.5511 1.35125 1.99881 1.90353 1.99881L9.90353 1.99881L9.90353 9.99881C9.90353 10.5511 10.3512 10.9988 10.9035 10.9988C11.4558 10.9988 11.9035 10.5511 11.9035 9.99881L11.9035 0.998814ZM0.710938 11.1914L1.41804 11.8985L11.6106 1.70592L10.9035 0.998814L10.1964 0.291707L0.00383073 10.4843L0.710938 11.1914Z" fill="currentColor"/></svg></a></div><div class="card-footer-wrap"><div class="card-footer-logo"><img src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a2884c461acdb2aa2c9b71e_Group%2027.svg" loading="lazy" alt="IGV Build Systems"/></div><div class="first-part"><div class="line-20-bottom"></div><div class="text-14-bold-caps green">Partner with IGV Build Systems</div><div class="spacer _12"></div><p class="paragraph-style green">If you're a developer, builder, or housing organisation looking to deliver more homes, we'd like to hear about your project.</p></div><a href="/contact" class="link-conect inline-block"><div>Start a Conversation</div><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9035 0.998814C11.9035 0.446529 11.4558 -0.00118672 10.9035 -0.0011863L1.90353 -0.00118618C1.35125 -0.00118651 0.90353 0.446529 0.90353 0.998814C0.90353 1.5511 1.35125 1.99881 1.90353 1.99881L9.90353 1.99881L9.90353 9.99881C9.90353 10.5511 10.3512 10.9988 10.9035 10.9988C11.4558 10.9988 11.9035 10.5511 11.9035 9.99881L11.9035 0.998814ZM0.710938 11.1914L1.41804 11.8985L11.6106 1.70592L10.9035 0.998814L10.1964 0.291707L0.00383073 10.4843L0.710938 11.1914Z" fill="currentColor"/></svg></a></div><div class="card-footer-wrap"><div class="card-footer-logo"><img src="https://cdn.prod.website-files.com/6a260acb180a11567373a66e/6a2884c407c5e40e89ae90c9_IGV%20Housing%20Logo_Dark.svg" loading="lazy" alt="IGV Housing"/></div><div class="first-part"><div class="line-20-bottom"></div><div class="text-14-bold-caps green">Municipal Partnerships</div><div class="spacer _12"></div><p class="paragraph-style green">IGV works directly with municipalities to accelerate housing delivery through pre-approved plan sets, streamlined approvals, and shared housing objectives.</p></div><a href="/contact" class="link-conect inline-block"><div>Talk to Our Municipal Team</div><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9035 0.998814C11.9035 0.446529 11.4558 -0.00118672 10.9035 -0.0011863L1.90353 -0.00118618C1.35125 -0.00118651 0.90353 0.446529 0.90353 0.998814C0.90353 1.5511 1.35125 1.99881 1.90353 1.99881L9.90353 1.99881L9.90353 9.99881C9.90353 10.5511 10.3512 10.9988 10.9035 10.9988C11.4558 10.9988 11.9035 10.5511 11.9035 9.99881L11.9035 0.998814ZM0.710938 11.1914L1.41804 11.8985L11.6106 1.70592L10.9035 0.998814L10.1964 0.291707L0.00383073 10.4843L0.710938 11.1914Z" fill="currentColor"/></svg></a></div></div></div></div></div></footer><footer id="dash-footer">
+  <div class="footer-block">
+  <div id="footer-sitemap">
+    <div class="sitemap-col">
+      <div class="sitemap-heading">IGV Housing</div>
+      <a href="https://igvhousing.com/municipalities">Municipalities</a>
+      <a href="https://www.igvhousing.com/esg">ESG Impact</a>
+      <a href="https://www.igvhousing.com/media">Media &amp; Resources</a>
+    </div>
+    <div class="sitemap-col">
+      <div class="sitemap-heading">IGV Divisions</div>
+      <a href="https://www.igvhousing.com" target="_blank" rel="noopener">IGV Housing</a>
+      <a href="https://www.igvbuild.com" target="_blank" rel="noopener">IGV Build Systems</a>
+      <a href="https://www.igvhope.com" target="_blank" rel="noopener">IGV Hope</a>
+    </div>
+    <div class="sitemap-col">
+      <div class="sitemap-heading">Sitemap</div>
+      <a href="https://www.igvcapital.com/housing-accelerator-program">Housing Accelerator Program</a>
+      <a href="https://www.igvcapital.com/LTD">LTD Fund</a>
+    </div>
+    <div class="sitemap-col">
+      <div class="sitemap-heading">Enquiries</div>
+      <a href="mailto:info@igvhousing.com">Investors</a>
+      <a href="mailto:info@igvhousing.com">Developer Partners</a>
+      <a href="mailto:info@igvhousing.com">Press</a>
+    </div>
+  </div>
+  </div>
+  <div class="footer-block footer-divider">
+  <div id="footer-bottom-bar">
+    <span id="footer-copyright">&copy; 2026 IGV Capital. All rights reserved.</span>
+    <div id="footer-bottom-links">
+      <a href="https://www.igvhousing.com/privacy" target="_blank" rel="noopener">Privacy</a>
+      <a href="https://www.igvcapital.com/terms" target="_blank" rel="noopener">Terms</a>
+      <a href="https://www.igvhousing.com/accessibility" target="_blank" rel="noopener">Accessibility</a>
+    </div>
+  </div>
+  </div>
+</footer></div><script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const items = [
+    { trigger: '.navlink-division', dropdown: '.dropdown_nav_division' },
+    { trigger: '.navlink-investment', dropdown: '.dropdown_nav_investment' },
+  ];
+
+  items.forEach(({ dropdown }) => {
+    const el = document.querySelector(dropdown);
+    if (!el) return;
+    el.style.height = '0px';
+    el.style.opacity = '0';
+    el.style.overflow = 'hidden';
+    el.style.pointerEvents = 'none';
+    el.style.transition = 'height 0.35s ease, opacity 0.35s ease';
+  });
+
+  function closeAll(except = null) {
+    items.forEach(({ trigger, dropdown }) => {
+      if (dropdown === except) return;
+      const el = document.querySelector(dropdown);
+      const tr = document.querySelector(trigger);
+      if (!el) return;
+      el.style.height = '0px';
+      el.style.opacity = '0';
+      el.style.pointerEvents = 'none';
+      if (tr) tr.classList.remove('is-active');
+    });
+  }
+
+  function open(dropdown, trigger) {
+    const el = document.querySelector(dropdown);
+    const tr = document.querySelector(trigger);
+    if (!el) return;
+    el.style.height = 'auto';
+    const h = el.scrollHeight + 'px';
+    el.style.height = '0px';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.style.height = h;
+        el.style.opacity = '1';
+        el.style.pointerEvents = 'all';
+      });
+    });
+    if (tr) tr.classList.add('is-active');
+  }
+
+  items.forEach(({ trigger, dropdown }) => {
+    const tr = document.querySelector(trigger);
+    if (!tr) return;
+
+    tr.addEventListener('click', function (e) {
+      e.preventDefault();
+      const el = document.querySelector(dropdown);
+      const isOpen = el && el.style.opacity === '1';
+
+      closeAll();
+
+      if (!isOpen) {
+        open(dropdown, trigger);
+      }
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    const clickedInside = items.some(({ trigger, dropdown }) => {
+      const tr = document.querySelector(trigger);
+      const el = document.querySelector(dropdown);
+      return (tr && tr.contains(e.target)) || (el && el.contains(e.target));
+    });
+    if (!clickedInside) closeAll();
+  });
+
+  // Mobile burger menu toggle
+  const burger = document.querySelector('.menu-burger');
+  const navWrapper = document.querySelector('.nav-wrapper');
+  const navigationEl2 = document.querySelector('.navigation');
+  if (burger && navWrapper) {
+    burger.addEventListener('click', function () {
+      navWrapper.classList.toggle('is-open');
+      if (navigationEl2) {
+        navigationEl2.classList.toggle('menu-active', navWrapper.classList.contains('is-open'));
+      }
+    });
+  }
+
+  // Nav overflow detection: force burger mode if the nav links don't fit on
+  // one line, even above the fixed 860px breakpoint. Re-checks after webfonts
+  // load, since Montserrat/Bitter can shift link widths after first paint.
+  const navigationEl = document.querySelector('.navigation');
+  const navRow = document.querySelector('.nav');
+  function checkNavFit() {
+    if (!navigationEl || !navRow) return;
+    if (window.innerWidth <= 860) {
+      navigationEl.classList.remove('force-burger');
+      return;
+    }
+    navigationEl.classList.remove('force-burger');
+    const overflowing = navRow.scrollWidth > navRow.clientWidth + 1;
+    if (overflowing) {
+      navigationEl.classList.add('force-burger');
+    }
+  }
+  checkNavFit();
+  window.addEventListener('resize', checkNavFit);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(checkNavFit);
+  }
+
+  // Scroll-triggered "fly up" reveal for main section blocks
+  const revealEls = document.querySelectorAll('.reveal-on-scroll');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // Staggered reveal for the benefit items. Each list is observed as a whole
+  // so its items always run in order, whatever speed the user scrolls at.
+  const benefitLists = document.querySelectorAll('.list-16px');
+  const showItems = (list) => {
+    list.querySelectorAll('li').forEach((li) => li.classList.add('is-visible'));
+  };
+  if ('IntersectionObserver' in window && benefitLists.length) {
+    const benefitObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          showItems(entry.target);
+          benefitObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+    benefitLists.forEach((list) => benefitObserver.observe(list));
+  } else {
+    benefitLists.forEach(showItems);
+  }
+
+});
+</script></body></html>
