@@ -213,6 +213,20 @@ Reversible at step 6 by repointing the domain back.
 
 ---
 
+## Crawling / AI indexing
+
+`public/robots.txt` allows all crawlers, with explicit entries for known
+AI crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-Web,
+anthropic-ai, Google-Extended, PerplexityBot, CCBot, Bingbot) so the site
+can be crawled and cited by AI search/assistants as well as ranked by
+regular search engines. `public/sitemap.xml` lists the site's indexable
+pages. If Cloudflare's AI Crawl Control is enabled on this zone, check it
+isn't injecting conflicting `Disallow` rules for the same bots ahead of
+this file's `Allow` rules — that happened on igvhope.com and needed a
+dashboard change, not a repo change.
+
+---
+
 ## Known follow-ups
 
 - CSS and JS are still inline in each page. Extracting to shared
