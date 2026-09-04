@@ -64,7 +64,7 @@ effectively dead code right now. Don't assume `window.IGV` is populated
 anywhere; check whether a page actually loads `config.js` before relying on
 it, and if you wire it in, be aware nothing currently depends on it.
 
-The GA4 tag (`G-QFW1PYC388`, one `<script>` block inlined near the top of
+The GA4 tag (`G-5WHbW3JCJ`, one `<script>` block inlined near the top of
 `<head>` on all five pages) does its own hostname check rather than using
 `window.IGV`, for the same reason — it fires `gtag('config', ...)` only on
 `igvcapital.com`/`www.igvcapital.com` so staging/localhost traffic doesn't
