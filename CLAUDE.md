@@ -73,14 +73,20 @@ GA4 property as production.
 
 The form does **not** use `window.IGV` — it hardcodes its own config inline
 near the bottom of the file:
-- Posts to `https://igvcapital-contact-verify.igvhousing.workers.dev`
-  (the `igvcapital-contact-verify` Worker) — same endpoint regardless of
-  environment; there is no staging/production split actually wired up here
-  despite `config.js` and `README.md` describing one.
+- Posts to `https://igvcapital-contactverify-stage.igvhousing.workers.dev`
+  (the `igvcapital-contactverify-stage` Worker — despite the `-stage` in its
+  name, this is confirmed to be the production backend) — same endpoint
+  regardless of environment; there is no staging/production split actually
+  wired up here despite `config.js` and `README.md` describing one. An
+  earlier version of this code pointed at
+  `igvcapital-contact-verify.igvhousing.workers.dev`, which doesn't
+  correspond to any deployed Worker and failed every request with
+  Cloudflare error 1042 — if contact-form requests start failing again,
+  check this URL hasn't drifted from the Worker's actual name first.
 - Uses **reCAPTCHA Enterprise** (`recaptcha/enterprise.js`), not the v2
   checkbox widget `config.js` was written for.
-- The `igvcapital-contact-verify` Worker's source is not in this repo (see
-  `workers/`, currently empty) — it's deployed separately.
+- The `igvcapital-contactverify-stage` Worker's source is not in this repo
+  (see `workers/`, currently empty) — it's deployed separately.
 
 ## Brand
 
