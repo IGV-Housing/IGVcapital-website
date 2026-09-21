@@ -262,7 +262,8 @@ button { font-family: inherit; }
 .text-15-bold { font-size: 0.95rem; font-weight: 700; color: var(--color-ink); text-align: center; }
 .text-15px-italic { font-size: 0.95rem; font-style: italic; color: var(--color-sage-text); }
 .text-20px-bold-caps { font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-cream); }
-.text-20px-italic { font-family: var(--font-heading); font-size: 1.3rem; font-style: italic; color: var(--color-ink); }
+.text-20px-italic { font-family: var(--font-heading); font-size: 1.3rem; font-style: italic; }
+.content-wrap .text-20px-italic { color: var(--color-accent); }
 .text-24-bold-caps {
   font-family: var(--font-body);
   font-size: 1.8rem;
@@ -302,7 +303,7 @@ button { font-family: inherit; }
 .button.blue { background-color: var(--color-accent); color: var(--color-white); }
 .button.blue.accelerator-cta { background-color: var(--color-steel-blue); }
 .button.blue.accelerator-cta:hover { opacity: 0.88; }
-.button.blue.green-v2 { background-color: var(--color-ink); }
+.button.blue.green-v2 { background-color: var(--color-accent); }
 /* Hero "Housing Accelerator Program" button - Magenta swatch, corrected to
    the confirmed true hex (952944) after the brand guide's CE7841 text value
    was confirmed mismatched against the actual swatch color */
@@ -1096,6 +1097,7 @@ a.stage-row:focus-visible { outline: 2px solid var(--color-cream); outline-offse
   padding-top: 0.5rem;
 }
 .card-footer-wrap .link-conect svg { flex-shrink: 0; }
+.card-footer-wrap .link-conect:hover { color: var(--color-accent); }
 .link-conect {
   display: inline-flex;
   align-items: center;
@@ -1103,9 +1105,23 @@ a.stage-row:focus-visible { outline: 2px solid var(--color-cream); outline-offse
   font-weight: 700;
   font-size: 0.85rem;
   color: var(--color-cream);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
+.link-conect > div { position: relative; }
+.link-conect > div::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.link-conect:hover > div::after { transform: scaleX(1); }
 .space-between-wrapper {
   display: flex;
   justify-content: space-between;
@@ -1347,9 +1363,9 @@ a.stage-row:focus-visible { outline: 2px solid var(--color-cream); outline-offse
     </div>
     <div class="sitemap-col">
       <div class="sitemap-heading">IGV Divisions</div>
-      <a href="https://www.igvhousing.com" target="_blank" rel="noopener">IGV Housing</a>
-      <a href="https://www.igvbuild.com" target="_blank" rel="noopener">IGV Build Systems</a>
-      <a href="https://www.igvhope.com" target="_blank" rel="noopener">IGV Hope</a>
+      <a href="https://www.igvhousing.com" target="_blank" rel="noopener">IGVhousing</a>
+      <a href="https://www.igvbuild.com" target="_blank" rel="noopener">IGVbuild systems</a>
+      <a href="https://www.igvhope.com" target="_blank" rel="noopener">IGVhope</a>
     </div>
     <div class="sitemap-col">
       <div class="sitemap-heading">Sitemap</div>
@@ -1357,10 +1373,8 @@ a.stage-row:focus-visible { outline: 2px solid var(--color-cream); outline-offse
       <a href="https://www.igvcapital.com/ltd">LTD Fund</a>
     </div>
     <div class="sitemap-col">
-      <div class="sitemap-heading">Contact The Team</div>
-      <a href="mailto:info@igvhousing.com">Investors</a>
-      <a href="mailto:info@igvhousing.com">Developer Partners</a>
-      <a href="mailto:info@igvhousing.com">Press</a>
+      <div class="sitemap-heading">Enquiries</div>
+      <a href="mailto:info@igvhousing.com">Contact The Team</a>
     </div>
   </div>
   </div>
