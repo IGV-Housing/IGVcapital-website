@@ -227,7 +227,7 @@ button { font-family: inherit; }
 .footer_first-part .text-14-bold-caps.blue { color: var(--color-steel-blue); }
 .text-14-bold-caps.green { color: var(--color-sage-text); }
 .text-14-bold-caps.mid { text-align: center; display: block; margin-left: auto; margin-right: auto; }
-.get-involved-label { color: var(--color-accent); }
+.get-involved-label { color: var(--color-ink); }
 .section-capital .text-14-bold-caps { color: var(--color-accent); }
 .section-capital .paragraph-style { font-family: var(--font-body); }
 .text-14-bold-caps.blue.accelerator-label { color: var(--color-steel-blue); }
@@ -700,6 +700,60 @@ button { font-family: inherit; }
   pointer-events: none;
   transform: translateX(-50%) scale(0.92);
 }
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 6vh 5vw;
+}
+.video-modal.is-open { display: flex; }
+.video-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 30, 28, 0.85);
+}
+.video-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+}
+.video-modal-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #000;
+}
+.video-modal-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-modal-close {
+  position: absolute;
+  top: -2.75rem;
+  right: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255,255,255,0.15);
+  color: var(--color-white);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+.video-modal-close:hover { background-color: rgba(255,255,255,0.28); }
 @media screen and (max-width: 860px) {
   .wwa-wrapper { grid-template-columns: 1fr; justify-items: stretch; }
   .wwa-video { aspect-ratio: 16 / 9; min-height: 220px; }
@@ -791,8 +845,11 @@ button { font-family: inherit; }
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   border-radius: 0;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  /* Match .container-large's actual inset: 5vw padding until the 1280px
+     cap kicks in, then pure centering — a flat 5vw falls short on wide
+     screens where container-large's auto margins add extra inset. */
+  padding-left: max(5vw, calc((100vw - var(--container-max)) / 2));
+  padding-right: max(5vw, calc((100vw - var(--container-max)) / 2));
   box-sizing: border-box;
 }
 .green-card, .green-card * {
@@ -1269,7 +1326,7 @@ a.stage-row:focus-visible { outline: 2px solid var(--color-cream); outline-offse
     </div>
   </div>
   </div>
-</footer></div><script>
+</footer></div><div class="video-modal" id="videoModal" aria-hidden="true"><div class="video-modal-backdrop" id="videoModalBackdrop"></div><div class="video-modal-dialog"><button type="button" class="video-modal-close" id="videoModalClose" aria-label="Close video">&times;</button><div class="video-modal-frame"><iframe id="videoModalIframe" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen title="Introducing IGV"></iframe></div></div></div><script>
 document.addEventListener('DOMContentLoaded', function () {
 
   const items = [
@@ -1435,19 +1492,35 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
-</script><script src="https://player.vimeo.com/api/player.js"></script><script>
+</script><script>
 document.addEventListener('DOMContentLoaded', function () {
-  var iframe = document.getElementById('storyIframe');
   var btn = document.getElementById('storyPlayBtn');
-  if (!iframe || !btn || typeof Vimeo === 'undefined') return;
+  var modal = document.getElementById('videoModal');
+  var backdrop = document.getElementById('videoModalBackdrop');
+  var closeBtn = document.getElementById('videoModalClose');
+  var modalIframe = document.getElementById('videoModalIframe');
+  if (!btn || !modal || !backdrop || !closeBtn || !modalIframe) return;
 
-  var player = new Vimeo.Player(iframe);
+  var VIDEO_SRC = 'https://player.vimeo.com/video/1212683750?autoplay=1';
 
-  btn.addEventListener('click', function () {
-    player.play();
-    btn.classList.add('is-hidden');
+  function openModal() {
+    modalIframe.src = VIDEO_SRC;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    modalIframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
-  player.on('pause', function () { btn.classList.remove('is-hidden'); });
-  player.on('ended', function () { btn.classList.remove('is-hidden'); });
 });
 </script></body></html>
