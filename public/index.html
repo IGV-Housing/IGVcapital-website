@@ -508,7 +508,11 @@ button { font-family: inherit; }
 .card_nav-wrap-v2 { display: flex; flex-direction: column; height: 100%; }
 .image-wrapper_nav { border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 10; flex-shrink: 0; }
 .image-wrapper_nav .image-full-nav, .image-full-nav { width: 100%; height: 100%; object-fit: cover; }
-.grid-3-about { grid-template-columns: repeat(3, 1fr); max-width: 50rem; }
+/* Match IGV Divisions' actual column width exactly (4 equal columns in
+   a 1280px-capped, 2rem-gap, 5vw-padded grid) rather than fitting 3
+   columns to an independent max-width — otherwise the images render
+   visibly smaller than Divisions' despite sharing the same aspect ratio. */
+.grid-3-about { grid-template-columns: repeat(3, calc((min(100vw, var(--container-max)) - 10vw - 6rem) / 4)); max-width: none; justify-content: center; }
 .about-card-body { margin-top: 0.875rem; display: flex; flex-direction: column; flex: 1; }
 .about-card-name { font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; color: var(--color-ink); margin: 0 0 0.5rem; }
 .about-card-desc { font-family: var(--font-body); font-size: 0.8rem; line-height: 1.45; color: #444444; margin: 0 0 0.75rem; }
