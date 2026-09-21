@@ -596,7 +596,7 @@ button { font-family: inherit; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background-color: rgba(255, 253, 243, 0.35);
+  background: linear-gradient(100deg, rgba(255, 253, 243, 0.88) 0%, rgba(255, 253, 243, 0.72) 32%, rgba(255, 253, 243, 0.38) 55%, rgba(255, 253, 243, 0.15) 75%);
 }
 .section-hero > .padding-global {
   position: relative;
@@ -643,11 +643,12 @@ button { font-family: inherit; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: stretch;
+  align-items: center;
 }
 .wwa-video {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
   margin: 0 auto;
   border-radius: 24px;
   overflow: hidden;
@@ -878,6 +879,7 @@ button { font-family: inherit; }
 @media screen and (max-width: 860px) {
   .accelerator-features { grid-template-columns: 1fr; }
 }
+body.force-burger .accelerator-features { grid-template-columns: 1fr; }
 .accelerator-feature {
   display: flex;
   flex-direction: column;
@@ -1483,12 +1485,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!navigationEl || !navRow) return;
     if (window.innerWidth <= 860) {
       navigationEl.classList.remove('force-burger');
+      document.body.classList.remove('force-burger');
       return;
     }
     navigationEl.classList.remove('force-burger');
+    document.body.classList.remove('force-burger');
     const overflowing = navRow.scrollWidth > navRow.clientWidth + 1;
     if (overflowing) {
       navigationEl.classList.add('force-burger');
+      document.body.classList.add('force-burger');
     }
   }
   checkNavFit();
