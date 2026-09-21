@@ -624,11 +624,15 @@ button { font-family: inherit; }
   text-underline-offset: 3px;
 }
 .arrow-center-embed { display: inline-flex; align-items: center; }
-.nav-simple-links { display: flex; flex-direction: column; max-width: 20rem; margin: 0 auto; padding: 1.5rem 5vw 2rem; gap: 0.25rem; }.nav-simple-link { padding: 0.75rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; color: var(--color-ink); text-decoration: none; }.nav-simple-link:hover { background-color: rgba(26,72,72,0.06); }
+.grid-3-about { grid-template-columns: repeat(3, 1fr); max-width: 50rem; }
+.card-nav-centered { text-align: center; }
+.card-nav-centered .space-betwenn_nav { align-items: center; }
+.card-nav-centered .explore_light-btn { justify-content: center; }
 @media screen and (max-width: 860px) {
-  .grid-4_nav, .grid-2-investment { grid-template-columns: 1fr; padding: 2rem 6vw; }
+  .grid-4_nav, .grid-2-investment, .grid-3-about { grid-template-columns: 1fr; padding: 2rem 6vw; }
   .dropdown_nav_division .image-wrapper_nav,
-  .dropdown_nav_investment .image-wrapper_nav { display: none; }
+  .dropdown_nav_investment .image-wrapper_nav,
+  .dropdown_nav_about .image-wrapper_nav { display: none; }
   .dropdown_nav_division, .dropdown_nav_investment, .dropdown_nav_about {
     position: static;
     left: auto;
