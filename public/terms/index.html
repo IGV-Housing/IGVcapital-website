@@ -572,6 +572,12 @@ button { font-family: inherit; }
 }
 .card_nav-wrap-v2:hover .about-card-explore { color: var(--color-accent); }
 .card_nav-wrap-v2:hover .about-card-explore::after { transform: scaleX(1); }
+body.force-burger .grid-4_nav,
+body.force-burger .grid-2-investment,
+body.force-burger .grid-3-about { grid-template-columns: 1fr; padding: 2rem 6vw; }
+body.force-burger .dropdown_nav_division .image-wrapper_nav,
+body.force-burger .dropdown_nav_investment .image-wrapper_nav,
+body.force-burger .dropdown_nav_about .image-wrapper_nav { display: none; }
 @media screen and (max-width: 860px) {
   .grid-4_nav, .grid-2-investment, .grid-3-about { grid-template-columns: 1fr; padding: 2rem 6vw; }
   .dropdown_nav_division .image-wrapper_nav,
@@ -586,6 +592,17 @@ button { font-family: inherit; }
     border-top: 1px solid rgba(26,72,72,0.08);
     width: 100%;
   }
+}
+body.force-burger .dropdown_nav_division,
+body.force-burger .dropdown_nav_investment,
+body.force-burger .dropdown_nav_about {
+  position: static;
+  left: auto;
+  right: auto;
+  top: auto;
+  box-shadow: none;
+  border-top: 1px solid rgba(26,72,72,0.08);
+  width: 100%;
 }
 
 /* ---------- Hero ---------- */
@@ -795,6 +812,14 @@ button { font-family: inherit; }
   /* Fill matches the page ground behind it - outline only */
   background-color: transparent;
   border: 2px solid var(--color-accent);
+  /* Its actual DOM parent is .padding-global, not .container-large (unlike
+     its sibling .header_layout), so it needs its own centering to line up
+     with the rest of the page at wide viewports instead of just sitting at
+     .padding-global's flat 5vw inset. */
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 .gap-1 { display: block; }
 .accelerator-features {
