@@ -665,9 +665,9 @@ button { font-family: inherit; }
 }
 .story-play-btn {
   position: absolute;
-  top: 50%;
+  bottom: 1.5rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   z-index: 2;
   display: inline-flex;
   align-items: center;
@@ -698,7 +698,7 @@ button { font-family: inherit; }
 .story-play-btn.is-hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, -50%) scale(0.92);
+  transform: translateX(-50%) scale(0.92);
 }
 @media screen and (max-width: 860px) {
   .wwa-wrapper { grid-template-columns: 1fr; justify-items: stretch; }
